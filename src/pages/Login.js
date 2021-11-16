@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from "react";
 
 // reactstrap components
@@ -34,6 +36,7 @@ function LoginPage() {
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
+  
   return (
     <>
       <ExamplesNavbar />
@@ -135,7 +138,6 @@ function LoginPage() {
             </Col>
           </Container>
         </div>
-        <TransparentFooter />
       </div>
     </>
   );

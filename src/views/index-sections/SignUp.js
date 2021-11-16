@@ -29,7 +29,7 @@ function SignUp() {
         className="section section-signup"
         style={{
           backgroundImage:
-            "url(" + require("../../assets/img/bg11.jpg").default + ")",
+            "url(" + require("assets/img/bg11.jpg").default + ")",
           backgroundSize: "cover",
           backgroundPosition: "top center",
           minHeight: "700px",

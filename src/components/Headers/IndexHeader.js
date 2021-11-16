@@ -29,7 +29,7 @@ function IndexHeader() {
           className="page-header-image"
           style={{
             backgroundImage:
-              "url(" + require("../../assets/img/header.jpg").default + ")",
+              "url(" + require("assets/img/header.jpg").default + ")",
           }}
           ref={pageHeader}
         ></div>
@@ -38,7 +38,7 @@ function IndexHeader() {
             <img
               alt="..."
               className="n-logo"
-              src={require("../../assets/img/now-logo.png").default}
+              src={require("assets/img/now-logo.png").default}
             ></img>
             <h1 className="h1-seo">Dalligetit!!!</h1>
             <h3>지온나 어렵다. ㅅㅂ</h3>
