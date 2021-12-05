@@ -41,7 +41,7 @@ function IndexHeader() {
               src={require("../../assets/img/now-logo.png").default}
             ></img>
             <h1 className="h1-seo">Dalligetit!!!</h1>
-            <h3>지온나 어렵다. ㅅㅂ</h3>
+            <h3>wearedalligetit</h3>
           </div>
         </Container>
       </div>
