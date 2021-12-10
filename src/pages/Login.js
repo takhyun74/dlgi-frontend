@@ -1,6 +1,7 @@
 // @ts-nocheck
 
-import React from "react";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -20,17 +21,23 @@ import {
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import TransparentFooter from "components/Footers/TransparentFooter.js";
 
-function LoginPage() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
-  React.useEffect(() => {
+function LoginPage({ history }) {
+  const [idFocus, setIdFocus] = useState(false);
+  const [passwordFocus, setPasswordFocus] = useState(false);
+
+  const [user_id, setId] = useState('');
+  const [password, setPassword] = useState('');
+
+  axios.defaults.withCredentials = true;
+  
+  useEffect(() => {
     document.body.classList.add("login-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
+
     return function cleanup() {
       document.body.classList.remove("login-page");
       document.body.classList.remove("sidebar-collapse");
@@ -65,7 +72,7 @@ function LoginPage() {
                     <InputGroup
                       className={
                         "no-border input-lg" +
-                        (firstFocus ? " input-group-focus" : "")
+                        (idFocus ? " input-group-focus" : "")
                       }
                     >
                       <InputGroupAddon addonType="prepend">
@@ -74,64 +81,59 @@ function LoginPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="First Name..."
+                        placeholder="ID"
                         type="text"
-                        onFocus={() => setFirstFocus(true)}
-                        onBlur={() => setFirstFocus(false)}
+                        onFocus={() => setIdFocus(true)}
+                        onBlur={() => setIdFocus(false)}
+                        onChange={(e) => setId(e.target.value)}
                       ></Input>
                     </InputGroup>
                     <InputGroup
                       className={
                         "no-border input-lg" +
-                        (lastFocus ? " input-group-focus" : "")
+                        (passwordFocus ? " input-group-focus" : "")
                       }
                     >
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
-                          <i className="now-ui-icons text_caps-small"></i>
+                          <i className="now-ui-icons ui-1_lock-circle-open"></i>
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="Last Name..."
-                        type="text"
-                        onFocus={() => setLastFocus(true)}
-                        onBlur={() => setLastFocus(false)}
+                        placeholder="Password"
+                        type="password"
+                        onFocus={() => setPasswordFocus(true)}
+                        onBlur={() => setPasswordFocus(false)}
+                        onChange={(e) => setPassword(e.target.value)}
                       ></Input>
                     </InputGroup>
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button
                       block
-                      className="btn-round"
+                      className="btn-round font-weight-bold"
                       color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={() =>{ 
+                        const data = { user_id, password };
+                        axios.post('/login', data)
+                        .then(res => {
+                          if(res.data.ok) {
+                            const { accessToken, refreshToken } = res.data;
+                            axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+                            axios.defaults.headers.common['Refresh'] = refreshToken;
+                            history.push("/");
+                          }
+                        })
+                        .catch(err => {
+                          alert(err.response.data.message);
+                          console.log(err.response)
+                          //this.$eventHub.$emit('showError', err)
+                        });
+                      }}
                       size="lg"
                     >
-                      Get Started
+                      LOGIN
                     </Button>
-                    <div className="pull-left">
-                      <h6>
-                        <a
-                          className="link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Create Account
-                        </a>
-                      </h6>
-                    </div>
-                    <div className="pull-right">
-                      <h6>
-                        <a
-                          className="link"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Need Help?
-                        </a>
-                      </h6>
-                    </div>
                   </CardFooter>
                 </Form>
               </Card>

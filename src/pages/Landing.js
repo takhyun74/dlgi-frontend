@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -38,6 +39,42 @@ function LandingPage() {
         <LandingPageHeader />
         <div className="section section-about-us">
           <Container>
+          <Row>
+              <Col className="ml-auto mr-auto text-center" md="8">
+                <h2 className="title">TEST</h2>
+                <h5 className="description">
+                  According to the National Oceanic and Atmospheric
+                  Administration, Ted, Scambos, NSIDClead scentist, puts the
+                  potentially record low maximum sea ice extent tihs year down
+                  to low ice extent in the Pacific and a late drop in ice extent
+                  in the Barents Sea.
+                </h5>
+                <Button
+                  block
+                  className="btn-round font-weight-bold"
+                  color="info"
+                  onClick={() =>{ 
+                    axios.get('/refresh')
+                    .then(res => {
+                      console.log(res);
+                      
+                      //if(res.data.ok) {
+                      //  console.lo
+                      //}
+                    })
+                    .catch(err => {
+                      alert(err.response.data.message);
+                          console.log(err.response)
+                      //this.$eventHub.$emit('showError', err)
+                    });
+                  }}
+                  size="lg"
+                >
+                  토큰 테스트
+                </Button>
+              </Col>
+            </Row>
+
             <Row>
               <Col className="ml-auto mr-auto text-center" md="8">
                 <h2 className="title">Who we are?</h2>
