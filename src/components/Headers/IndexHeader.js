@@ -2,8 +2,10 @@
 import React from "react";
 
 // reactstrap components
-import { Container } from "reactstrap";
+import { Button, Container } from "reactstrap";
 // core components
+
+const strMainTitle = "마지막 한 걸음까지 멋지게 완주\nwearedalligetit";
 
 function IndexHeader() {
   let pageHeader = React.createRef();
@@ -25,23 +27,22 @@ function IndexHeader() {
   return (
     <>
       <div className="page-header clear-filter" filter-color="blue">
-        <div
-          className="page-header-image"
-          style={{
-            backgroundImage:
-              "url(" + require("../../assets/img/header.jpg").default + ")",
-          }}
-          ref={pageHeader}
-        ></div>
+        <div className="page-header-image" ref={pageHeader}></div>
         <Container>
           <div className="content-center brand">
             <img
               alt="..."
               className="n-logo"
-              src={require("../../assets/img/now-logo.png").default}
+              src={require("../../assets/img/three-dalli.png").default}
             ></img>
-            <h1 className="h1-seo">Dalligetit!!!</h1>
-            <h3>wearedalligetit!!</h3>
+            {/* <h1 className="h1-seo"> */}
+            {/* <h1>
+              {strMainTitle.split("\n").map((i, key) => {
+                return <div key={key}>{i}</div>;
+              })}
+            </h1> */}
+            <h1>wearedalligetit</h1>
+            <Button color="info">정기런 신청하기</Button>
           </div>
         </Container>
       </div>
