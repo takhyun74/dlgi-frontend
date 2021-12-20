@@ -459,6 +459,12 @@
   margin-bottom: 40px;
 }
 
+.n-logo.spin {
+  -webkit-animation: nc-icon-spin 2s infinite linear;
+  -moz-animation: nc-icon-spin 2s infinite linear;
+  animation: nc-icon-spin 2s infinite linear;
+}
+
 .invision-logo {
   max-width: 70px;
   top: -2px;
@@ -503,6 +509,20 @@
 
 .dlgi-logo {
   max-width: 80px;
+}
+
+.dlgi-logo.spin {
+  -webkit-animation: nc-icon-spin 2s infinite linear;
+  -moz-animation: nc-icon-spin 2s infinite linear;
+  animation: nc-icon-spin 2s infinite linear;
+}
+
+.arrow-footer {
+  position: fixed;
+  bottom: 20px;
+  cursor: pointer;
+  font-size: 30px;
+  color: black;
 }
 
 @media screen and (max-width: 991px) {

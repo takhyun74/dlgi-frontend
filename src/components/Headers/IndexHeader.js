@@ -2,13 +2,14 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Container } from "reactstrap";
+import { Button, Container, NavLink } from "reactstrap";
 // core components
 
 const strMainTitle = "마지막 한 걸음까지 멋지게 완주\nwearedalligetit";
 
 function IndexHeader() {
   let pageHeader = React.createRef();
+  const [arrowDisplayYn, setArrowDisplayYn] = React.useState("");
 
   React.useEffect(() => {
     if (window.innerWidth > 991) {
@@ -16,7 +17,19 @@ function IndexHeader() {
         let windowScrollTop = window.pageYOffset / 3;
         pageHeader.current.style.transform =
           "translate3d(0," + windowScrollTop + "px,0)";
+        if (
+          document.documentElement.scrollTop > 0 ||
+          document.body.scrollTop > 0
+        ) {
+          setArrowDisplayYn("none");
+        } else if (
+          document.documentElement.scrollTop < 200 ||
+          document.body.scrollTop < 200
+        ) {
+          setArrowDisplayYn("");
+        }
       };
+
       window.addEventListener("scroll", updateScroll);
       return function cleanup() {
         window.removeEventListener("scroll", updateScroll);
@@ -32,7 +45,7 @@ function IndexHeader() {
           <div className="content-center brand">
             <img
               alt="..."
-              className="n-logo"
+              className="n-logo spin"
               src={require("../../assets/img/three-dalli.png").default}
             ></img>
             {/* <h1 className="h1-seo"> */}
@@ -44,6 +57,33 @@ function IndexHeader() {
             <h1>wearedalligetit</h1>
             <Button color="info">정기런 신청하기</Button>
           </div>
+
+          <i
+            className="now-ui-icons info arrows-1_minimal-down arrow-footer"
+            style={{ display: `${arrowDisplayYn}` }}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("basic-elements").scrollIntoView({
+                behavior: "smooth",
+                block: "end",
+                inline: "nearest",
+              });
+            }}
+          ></i>
+
+          {/* <NavLink
+            href="#pablo"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("basic-elements").scrollIntoView({
+                behavior: "smooth",
+                block: "end",
+                inline: "nearest",
+              });
+            }}
+          >
+            <i className="now-ui-icons info arrows-1_minimal-down arrow-footer"></i>
+          </NavLink> */}
         </Container>
       </div>
     </>
