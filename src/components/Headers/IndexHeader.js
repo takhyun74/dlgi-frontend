@@ -63,9 +63,9 @@ function IndexHeader() {
             style={{ display: `${arrowDisplayYn}` }}
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("basic-elements").scrollIntoView({
+              document.getElementById("div_Section01").scrollIntoView({
                 behavior: "smooth",
-                block: "end",
+                block: "start",
                 inline: "nearest",
               });
             }}

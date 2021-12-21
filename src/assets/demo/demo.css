@@ -525,6 +525,17 @@
   color: black;
 }
 
+.section-text-area {
+  padding: 200px 0;
+  text-align: center;
+}
+
+.section-text {
+  display: inline-block;
+  font-size: 2.225em;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 991px) {
   .section-navbars .navbar-collapse {
     display: none !important;
