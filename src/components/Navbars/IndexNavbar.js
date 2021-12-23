@@ -21,6 +21,7 @@ function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [MainLogoColor, setMainLogoColor] = React.useState("blue");
+  const [navFontColor, setNavFontColor] = React.useState("blue");
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -29,12 +30,14 @@ function IndexNavbar() {
       ) {
         setNavbarColor("");
         setMainLogoColor("white");
+        setNavFontColor("#ffffff");
       } else if (
         document.documentElement.scrollTop < 400 ||
         document.body.scrollTop < 400
       ) {
         setNavbarColor("navbar-transparent");
         setMainLogoColor("blue");
+        setNavFontColor("#000000");
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -104,7 +107,7 @@ function IndexNavbar() {
                   }}
                 >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
-                  <p className="nav-font-size">크루소개</p>
+                  <p style={{ color: `${navFontColor}` }}>크루소개</p>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -118,7 +121,7 @@ function IndexNavbar() {
                   }}
                 >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
-                  <p>신청서</p>
+                  <p style={{ color: `${navFontColor}` }}>신청서</p>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -132,7 +135,7 @@ function IndexNavbar() {
                   }}
                 >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
-                  <p>SHOP</p>
+                  <p style={{ color: `${navFontColor}` }}>SHOP</p>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -146,7 +149,7 @@ function IndexNavbar() {
                   }}
                 >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
-                  <p>사진공유</p>
+                  <p style={{ color: `${navFontColor}` }}>사진공유</p>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -160,7 +163,7 @@ function IndexNavbar() {
                   }}
                 >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
-                  <p>자주하는 질문</p>
+                  <p style={{ color: `${navFontColor}` }}>자주하는 질문</p>
                 </NavLink>
               </NavItem>
               {/* <UncontrolledDropdown nav>
@@ -249,6 +252,7 @@ function IndexNavbar() {
                   <i
                     id="i_userInfo"
                     className="now-ui-icons users_single-02"
+                    style={{ color: `${navFontColor}` }}
                   ></i>
                 </NavLink>
                 <UncontrolledTooltip target="#i_userInfo">
@@ -260,6 +264,7 @@ function IndexNavbar() {
                   <i
                     id="i_userJoin"
                     className="now-ui-icons users_single-02"
+                    style={{ color: `${navFontColor}` }}
                   ></i>
                 </NavLink>
                 <UncontrolledTooltip target="#i_userJoin">

@@ -40,36 +40,39 @@ function IndexHeader() {
   return (
     <>
       <div className="page-header clear-filter" filter-color="blue">
-        <div className="page-header-image" ref={pageHeader}></div>
+        <div className="index-header-gradation-img" ref={pageHeader}></div>
         <Container>
-          <div className="content-center brand">
-            <img
-              alt="..."
-              className="n-logo spin"
-              src={require("../../assets/img/three-dalli.png").default}
-            ></img>
-            {/* <h1 className="h1-seo"> */}
-            {/* <h1>
+          <div className="index-header-main-area">
+            <div className="index-header-flex-sub-01">
+              <img
+                alt="..."
+                className="n-logo spin index-header-main-img"
+                src={require("../../assets/img/three-dalli.png").default}
+                style={{ width: "170px" }}
+              ></img>
+              {/* <h1 className="h1-seo"> */}
+              {/* <h1>
               {strMainTitle.split("\n").map((i, key) => {
                 return <div key={key}>{i}</div>;
               })}
             </h1> */}
-            <h1>wearedalligetit</h1>
-            <Button color="info">정기런 신청하기</Button>
-          </div>
+              <h1>wearedalligetit</h1>
+              <Button color="info">정기런 신청하기</Button>
+            </div>
 
-          <i
-            className="now-ui-icons info arrows-1_minimal-down arrow-footer"
-            style={{ display: `${arrowDisplayYn}` }}
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById("div_Section01").scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "nearest",
-              });
-            }}
-          ></i>
+            <i
+              className="now-ui-icons info arrows-1_minimal-down arrow-footer"
+              style={{ display: `${arrowDisplayYn}` }}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("div_Section01").scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                  inline: "nearest",
+                });
+              }}
+            ></i>
+          </div>
 
           {/* <NavLink
             href="#pablo"

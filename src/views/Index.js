@@ -12,6 +12,7 @@ import DarkFooter from "../components/Footers/DarkFooter.js";
 // sections for this page
 import Images from "./index-sections/Images.js";
 import Section01 from "./index-sections/Section01.js";
+import Section02 from "./index-sections/Section02.js";
 import BasicElements from "./index-sections/BasicElements.js";
 import Navbars from "./index-sections/Navbars.js";
 import Tabs from "./index-sections/Tabs.js";
@@ -46,6 +47,7 @@ function Index() {
         <div className="main">
           {/* <Images /> */}
           <Section01 />
+          <Section02 />
           <BasicElements />
           <Navbars />
           <Tabs />
