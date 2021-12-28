@@ -13,6 +13,7 @@ import DarkFooter from "../components/Footers/DarkFooter.js";
 import Images from "./index-sections/Images.js";
 import Section01 from "./index-sections/Section01.js";
 import Section02 from "./index-sections/Section02.js";
+import Section03 from "./index-sections/Section03.js";
 import BasicElements from "./index-sections/BasicElements.js";
 import Navbars from "./index-sections/Navbars.js";
 import Tabs from "./index-sections/Tabs.js";
@@ -48,7 +49,8 @@ function Index() {
           {/* <Images /> */}
           <Section01 />
           <Section02 />
-          <BasicElements />
+          <Section03 />
+          {/* <BasicElements />
           <Navbars />
           <Tabs />
           <Pagination />
@@ -60,9 +62,9 @@ function Index() {
           <CompleteExamples />
           <SignUp />
           <Examples />
-          <Download />
+          <Download /> */}
         </div>
-        <DarkFooter />
+        {/* <DarkFooter /> */}
       </div>
     </>
   );

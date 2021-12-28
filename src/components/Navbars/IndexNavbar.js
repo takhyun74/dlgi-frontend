@@ -21,7 +21,7 @@ function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [MainLogoColor, setMainLogoColor] = React.useState("blue");
-  const [navFontColor, setNavFontColor] = React.useState("blue");
+  const [navFontColor, setNavFontColor] = React.useState("#000000");
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (

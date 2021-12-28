@@ -14,7 +14,7 @@ import {
   Col,
 } from "reactstrap";
 
-const Section02 = () => {
+const Section03 = () => {
   React.useEffect(() => {
     //Nothing to do.
   });
@@ -31,12 +31,20 @@ const Section02 = () => {
           <div className="height-100">
             <div className="sec02-contents-area">
               <div className="section-title-area">
-                <div className="section-title">달리기릿의 달리기</div>
-                <div className="section-sub-title">'달리기' 그리고</div>
-                <div className="section-sub-title">'LET'S GET IT'</div>
+                <div className="section-title">달리기릿의 표현방식</div>
+                {/* <div className="section-sub-title">'달리기' 그리고</div>
+                <div className="section-sub-title">'LET'S GET IT'</div> */}
               </div>
-              <div>
+              <div
+                style={{
+                  height: "100%",
+                }}
+              >
                 <div className="section-right-img-area">
+                  <p className="sec03-sub-title">러닝의 본질적인 가치와 멋을</p>
+                  <p className="sec03-sub-title">
+                    달리기릿만의 표현방식으로 재해석 합니다.
+                  </p>
                   <img
                     className="sec02-img"
                     alt="..."
@@ -49,11 +57,22 @@ const Section02 = () => {
                     alt="..."
                     src={require("../../assets/img/sec02-01.jpg").default}
                   ></img>
+                  <p
+                    className="sec03-sub-title"
+                    style={{
+                      padding: "50px 0px 0px 0px",
+                    }}
+                  >
+                    우리는 러닝과 새로운 예술 행위를 혼합하며
+                  </p>
+                  <p className="sec03-sub-title">
+                    우리만의 새로운 형태의 러닝문화를 만들어 가길 원합니다.
+                  </p>
                 </div>
               </div>
-              <p className="section-desc">
+              {/* <p className="section-desc">
                 우리가 함께할 달리기릿은 그렇게 탄생했습니다.
-              </p>
+              </p> */}
             </div>
           </div>
         </Container>
@@ -62,4 +81,4 @@ const Section02 = () => {
   );
 };
 
-export default Section02;
+export default Section03;
