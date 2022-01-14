@@ -50,7 +50,7 @@ function Index() {
           <Section01 />
           <Section02 />
           <Section03 />
-          {/* <BasicElements />
+          <BasicElements />
           <Navbars />
           <Tabs />
           <Pagination />
@@ -62,7 +62,7 @@ function Index() {
           <CompleteExamples />
           <SignUp />
           <Examples />
-          <Download /> */}
+          <Download />
         </div>
         {/* <DarkFooter /> */}
       </div>

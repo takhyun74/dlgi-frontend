@@ -39,30 +39,70 @@ function IndexHeader() {
 
   return (
     <>
-      <div className="page-header clear-filter" filter-color="blue">
+      <div
+        className="page-header clear-filter"
+        filter-color="blue"
+        style={{
+          backgroundImage:
+            "linear-gradient( rgba(256, 255, 255, 0.45), rgba(256, 256, 256, 0) ),url(" +
+            require("../../assets/img/dlgi-header.jpg").default +
+            ")",
+          backgroundSize: "100% 105%",
+        }}
+      >
         <div className="index-header-gradation-img" ref={pageHeader}></div>
+
         <Container>
           <div className="index-header-main-area">
             <div className="index-header-flex-sub-01">
-              <img
+              {/* <img
                 alt="..."
                 className="n-logo spin index-header-main-img"
                 src={require("../../assets/img/three-dalli.png").default}
                 style={{ width: "170px" }}
+              ></img> */}
+              <h1 className="font-size-5em color-black">마지막 한 걸음 까지</h1>
+              <h1 className="font-size-5em color-black">멋지게 완주</h1>
+              {/* <h1 className="main-font-eng color-black">DALLIGETIT</h1> */}
+              <Button
+                className="btn-round"
+                color="info"
+                style={{
+                  fontSize: "30px",
+                  fontWeight: "600",
+                  padding: "10px 30px 10px 30px",
+                }}
+              >
+                정기런 신청하기
+              </Button>
+              {/* <img
+                alt="..."
+                className="n-logo index-header-main-img"
+                src={require("../../assets/img/dalli-pixel.png").default}
+                style={{
+                  position: "relative",
+                  top: "160px",
+                  display: "inherit",
+                  zIndex: "-1",
+                }}
               ></img>
-              {/* <h1 className="h1-seo"> */}
-              {/* <h1>
-              {strMainTitle.split("\n").map((i, key) => {
-                return <div key={key}>{i}</div>;
-              })}
-            </h1> */}
-              <h1>wearedalligetit</h1>
-              <Button color="info">정기런 신청하기</Button>
+              <img
+                alt="..."
+                className="n-logo index-header-main-img"
+                src={require("../../assets/img/new-logo-pixel.png").default}
+                style={{
+                  position: "relative",
+                  bottom: "500px",
+                  display: "inherit",
+                  zIndex: "-1",
+                }}
+              ></img> */}
             </div>
 
-            <i
-              className="now-ui-icons info arrows-1_minimal-down arrow-footer"
+            <img
+              className="header-arrow"
               style={{ display: `${arrowDisplayYn}` }}
+              src={require("../../assets/img/arrow.gif").default}
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById("div_Section01").scrollIntoView({
@@ -71,7 +111,7 @@ function IndexHeader() {
                   inline: "nearest",
                 });
               }}
-            ></i>
+            ></img>
           </div>
 
           {/* <NavLink

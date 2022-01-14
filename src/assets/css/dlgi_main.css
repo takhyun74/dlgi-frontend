@@ -28,7 +28,7 @@
 }
 
 .index-header-flex-sub-01 {
-  margin-top: 270px;
+  margin-top: 160px;
 }
 
 .index-header-main-img {
@@ -46,15 +46,10 @@
   animation: nc-icon-spin 2s infinite linear;
 }
 
-.arrow-footer {
-  background: none;
-  border: 0px;
-  padding: 0px;
-  outline: none;
+.header-arrow {
+  width: 80px;
+  filter: opacity(0.5) drop-shadow(grey 0px 0px 0px);
   cursor: pointer;
-  margin-bottom: 30px;
-  font-size: 30px;
-  font-weight: bolder;
   color: #000000;
 }
 
@@ -165,4 +160,31 @@
   font-size: 23px;
   font-weight: 600;
   color: rgb(51, 61, 75);
+}
+
+.main-font-eng {
+  font-family: "dlgi-eng";
+}
+
+@font-face {
+  font-family: "dlgi-eng";
+  src: url("../fonts/dlgi-eng.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "dlgi-kor";
+  src: url("../fonts/dlgi-kor.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-size-5em {
+  font-size: 5.225em;
+  font-weight: 700;
+}
+
+.color-black {
+  color: #000000;
 }
