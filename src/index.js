@@ -21,11 +21,13 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 // styles for this kit
 import "./assets/css/bootstrap.min.css";
+import "./assets/css/dlgi_main.css";
 import "./assets/scss/now-ui-kit.scss?v=1.5.0";
 import "./assets/demo/demo.css?v=1.5.0";
 import "./assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 // pages for this kit
 import Index from "./views/Index.js";
+import IntroduceDlgi from "./views/IntroduceDlgi.js";
 import NucleoIcons from "./views/NucleoIcons.js";
 import LoginPage from "./views/examples/LoginPage.js";
 import LandingPage from "./views/examples/LandingPage.js";
@@ -37,6 +39,11 @@ ReactDOM.render(
     <Switch>
       <Switch>
         <Route path="/index" render={(props) => <Index {...props} />} />
+        {/* 크루소개 페이지 추가 */}
+        <Route
+          path="/dlgicrew"
+          render={(props) => <IntroduceDlgi {...props} />}
+        />
         <Route
           path="/nucleo-icons"
           render={(props) => <NucleoIcons {...props} />}
