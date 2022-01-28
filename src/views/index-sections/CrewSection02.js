@@ -27,6 +27,7 @@ const CrewSection02 = () => {
         var iOpacity = 1;
 
         if (2400 <= window.scrollY) {
+          //barkbark
           //console.log(1 - window.scrollY / homeHeigth);
           if (0 === BlackDiv.length) {
             const newDIV = document.createElement("div");
