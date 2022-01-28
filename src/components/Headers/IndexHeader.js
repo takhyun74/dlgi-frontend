@@ -47,7 +47,7 @@ function IndexHeader() {
             "linear-gradient( rgba(256, 255, 255, 0.45), rgba(256, 256, 256, 0) ),url(" +
             require("../../assets/img/dlgi-header.jpg").default +
             ")",
-          backgroundSize: "100% 105%",
+          backgroundSize: "120% 105%",
         }}
       >
         <div className="index-header-gradation-img" ref={pageHeader}></div>
@@ -100,7 +100,7 @@ function IndexHeader() {
             </div>
 
             <img
-              className="header-arrow"
+              className="index-header-arrow"
               style={{ display: `${arrowDisplayYn}` }}
               src={require("../../assets/img/arrow.gif").default}
               onClick={(e) => {

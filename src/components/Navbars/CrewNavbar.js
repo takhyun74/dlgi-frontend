@@ -20,8 +20,8 @@ import {
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
-  const [MainLogoColor, setMainLogoColor] = React.useState("blue");
-  const [navFontColor, setNavFontColor] = React.useState("#000000");
+  const [MainLogoColor, setMainLogoColor] = React.useState("white");
+  const [navFontColor, setNavFontColor] = React.useState("#ffffff");
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -29,15 +29,11 @@ function IndexNavbar() {
         document.body.scrollTop > 399
       ) {
         setNavbarColor("");
-        setMainLogoColor("white");
-        setNavFontColor("#ffffff");
       } else if (
         document.documentElement.scrollTop < 400 ||
         document.body.scrollTop < 400
       ) {
         setNavbarColor("navbar-transparent");
-        setMainLogoColor("blue");
-        setNavFontColor("#000000");
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -95,7 +91,7 @@ function IndexNavbar() {
               <NavItem>
                 <NavLink
                   href="/dlgicrew"
-                  target="_blank"
+                  //target="_blank"
                   // onClick={(e) => {
                   //   e.preventDefault();
                   //   document

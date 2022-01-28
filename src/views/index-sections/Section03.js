@@ -47,15 +47,17 @@ const Section03 = () => {
                   </p>
                   <img
                     className="sec02-img"
+                    // style={{ height: "70%" }}
                     alt="..."
-                    src={require("../../assets/img/sec02-01.jpg").default}
+                    src={require("../../assets/img/sec03-02.jpg").default}
                   ></img>
                 </div>
                 <div className="section-left-img-area">
                   <img
                     className="sec02-img"
+                    style={{ height: "50%" }}
                     alt="..."
-                    src={require("../../assets/img/sec02-01.jpg").default}
+                    src={require("../../assets/img/sec03-01.jpg").default}
                   ></img>
                   <p
                     className="sec03-sub-title"

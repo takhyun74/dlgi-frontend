@@ -47,7 +47,7 @@ const Section02 = () => {
                   <img
                     className="sec02-img"
                     alt="..."
-                    src={require("../../assets/img/sec02-01.jpg").default}
+                    src={require("../../assets/img/sec02-02.jpg").default}
                   ></img>
                 </div>
               </div>

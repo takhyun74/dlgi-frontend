@@ -12,6 +12,34 @@
   );
 }
 
+.crew-header-gradation-img {
+  position: absolute;
+  top: 65%;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(
+    0deg,
+    black 0%,
+    black 59px,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.crew-section01-gradation-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(
+    180deg,
+    black 0%,
+    black 59px,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 .index-header-main-area {
   position: absolute;
   top: 0px;
@@ -28,7 +56,11 @@
 }
 
 .index-header-flex-sub-01 {
-  margin-top: 160px;
+  margin-top: 15%;
+}
+
+.crew-header-flex-sub-01 {
+  margin-top: 70%;
 }
 
 .index-header-main-img {
@@ -46,11 +78,14 @@
   animation: nc-icon-spin 2s infinite linear;
 }
 
-.header-arrow {
+.index-header-arrow {
   width: 80px;
-  filter: opacity(0.5) drop-shadow(grey 0px 0px 0px);
   cursor: pointer;
-  color: #000000;
+}
+
+.crew-header-arrow {
+  width: 55px;
+  cursor: pointer;
 }
 
 .section-text-area {
@@ -85,6 +120,14 @@
   font-weight: 700;
   line-height: 1.4;
   color: #191f28;
+  white-space: pre-wrap;
+}
+
+.crew-section-sub-title {
+  font-size: 40px;
+  font-weight: bold;
+  /* line-height: 1.4; */
+  color: #ffffff;
   white-space: pre-wrap;
 }
 
@@ -187,4 +230,128 @@
 
 .color-black {
   color: #000000;
+}
+
+.color-white {
+  color: #ffffff;
+}
+
+.crew-header-font-smth {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* .index-header-background-img {
+  background-image: linear-gradient(
+      rgba(256, 255, 255, 0),
+      rgba(256, 256, 256, 0)
+    ),
+    url("../img/dlgi-header.jpg");
+  background-size: 120% 105%;
+} */
+
+.crew-header-background-img {
+  background-image: linear-gradient(
+      rgba(256, 255, 255, 0),
+      rgba(256, 256, 256, 0)
+    ),
+    url("../img/crew-header.jpg");
+  background-size: 120% 105%;
+}
+
+.crew-section01-background-img {
+  background-image: linear-gradient(
+      rgba(256, 255, 255, 0),
+      rgba(256, 256, 256, 0)
+    ),
+    url("../img/sec02-02.jpg");
+  background-size: 100% 100%;
+}
+
+.crew-section02-background-img {
+  background-image: linear-gradient(
+      rgba(256, 255, 255, 0),
+      rgba(256, 256, 256, 0)
+    ),
+    url("../img/sec03-02.jpg");
+  background-size: 100% 100%;
+
+  /* position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://static.toss.im/assets/homepage/team/kv-2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; */
+}
+
+.fixed-black-area {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(18, 20, 23);
+  opacity: 0.85865;
+}
+
+.fixed-background-img {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.animation-init {
+  opacity: 0;
+  padding-top: 1em;
+}
+
+.animation-fade {
+  opacity: 1;
+  padding-top: 0;
+  transition: all 0.1s;
+}
+
+.square-box {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 788px;
+  height: 406px;
+  padding: 60px 92px;
+  margin: 100% auto;
+  text-align: center;
+  background: rgba(26, 30, 36, 0.65);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+}
+
+.square-box-title {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 43.5px;
+  color: #b0b8c1;
+  letter-spacing: normal;
+  word-break: keep-all;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.square-box-contents {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: bold;
+  font-stretch: normal;
+  line-height: 43.5px;
+  color: #ffffff;
+  letter-spacing: normal;
+  word-break: keep-all;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
