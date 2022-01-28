@@ -33,6 +33,7 @@ import LoginPage from "./views/examples/LoginPage.js";
 import LandingPage from "./views/examples/LandingPage.js";
 import ProfilePage from "./views/examples/ProfilePage.js";
 import HomePage from "./views/home/Home.js"
+import ApplicationDetail from "./pages/applicationDetail/ApplicationDetail";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -63,6 +64,10 @@ ReactDOM.render(
         <Route
           path="/login-page"
           render={(props) => <LoginPage {...props} />}
+        />
+        <Route
+          path="/applicationDetail"
+          render={(props) => <ApplicationDetail {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
