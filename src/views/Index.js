@@ -12,6 +12,9 @@ import TransparentFooter from "../components/Footers/TransparentFooter.js";
 
 // sections for this page
 import Images from "./index-sections/Images.js";
+import Section01 from "./index-sections/Section01.js";
+import Section02 from "./index-sections/Section02.js";
+import Section03 from "./index-sections/Section03.js";
 import BasicElements from "./index-sections/BasicElements.js";
 import Navbars from "./index-sections/Navbars.js";
 import Tabs from "./index-sections/Tabs.js";
@@ -44,7 +47,10 @@ function Index() {
       <div className="wrapper">
         <IndexHeader />
         <div className="main">
-          <Images />
+          {/* <Images /> */}
+          <Section01 />
+          <Section02 />
+          <Section03 />
           <BasicElements />
           <Navbars />
           <Tabs />
@@ -60,8 +66,6 @@ function Index() {
           <Download />
         </div>
         {/* <DarkFooter /> */}
-
-        <TransparentFooter />
       </div>
     </>
   );

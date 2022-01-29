@@ -20,6 +20,8 @@ import {
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
+  const [MainLogoColor, setMainLogoColor] = React.useState("blue");
+  const [navFontColor, setNavFontColor] = React.useState("#000000");
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -27,11 +29,15 @@ function IndexNavbar() {
         document.body.scrollTop > 399
       ) {
         setNavbarColor("");
+        setMainLogoColor("white");
+        setNavFontColor("#ffffff");
       } else if (
         document.documentElement.scrollTop < 400 ||
         document.body.scrollTop < 400
       ) {
         setNavbarColor("navbar-transparent");
+        setMainLogoColor("blue");
+        setNavFontColor("#000000");
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -53,15 +59,18 @@ function IndexNavbar() {
       <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
         <Container>
           <div className="navbar-translate">
-            <NavbarBrand
-              href="https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-index-navbar"
-              target="_blank"
-              id="navbar-brand"
-            >
-              Now UI Kit React
+            <NavbarBrand href="/index" target="_blank" id="navbar-brand">
+              <img
+                alt="..."
+                className="dlgi-logo"
+                src={
+                  require(`../../assets/img/dlgi-logo-${MainLogoColor}.png`)
+                    .default
+                }
+              ></img>
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
-              Designed by Invision. Coded by Creative Tim
+              Home
             </UncontrolledTooltip>
             <button
               className="navbar-toggler navbar-toggler"
@@ -85,6 +94,21 @@ function IndexNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink
+                  href="/dlgicrew"
+                  target="_blank"
+                  // onClick={(e) => {
+                  //   e.preventDefault();
+                  //   document
+                  //     .getElementById("download-section")
+                  //     .scrollIntoView();
+                  // }}
+                >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                  <p style={{ color: `${navFontColor}` }}>크루소개</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
                   href="#pablo"
                   onClick={(e) => {
                     e.preventDefault();
@@ -93,11 +117,53 @@ function IndexNavbar() {
                       .scrollIntoView();
                   }}
                 >
-                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
-                  <p>Download</p>
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                  <p style={{ color: `${navFontColor}` }}>신청서</p>
                 </NavLink>
               </NavItem>
-              <UncontrolledDropdown nav>
+              <NavItem>
+                <NavLink
+                  href="#pablo"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("download-section")
+                      .scrollIntoView();
+                  }}
+                >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                  <p style={{ color: `${navFontColor}` }}>SHOP</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="#pablo"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("download-section")
+                      .scrollIntoView();
+                  }}
+                >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                  <p style={{ color: `${navFontColor}` }}>사진공유</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="#pablo"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .getElementById("download-section")
+                      .scrollIntoView();
+                  }}
+                >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                  <p style={{ color: `${navFontColor}` }}>자주하는 질문</p>
+                </NavLink>
+              </NavItem>
+              {/* <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
                   color="default"
@@ -121,8 +187,8 @@ function IndexNavbar() {
                     Documentation
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
-              <NavItem>
+              </UncontrolledDropdown> */}
+              {/* <NavItem>
                 <Button
                   className="nav-link btn-neutral"
                   color="info"
@@ -136,8 +202,8 @@ function IndexNavbar() {
                 <UncontrolledTooltip target="#upgrade-to-pro">
                   Cooming soon!
                 </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
+              </NavItem> */}
+              {/* <NavItem>
                 <NavLink
                   href="https://twitter.com/CreativeTim?ref=creativetim"
                   target="_blank"
@@ -174,6 +240,32 @@ function IndexNavbar() {
                 </NavLink>
                 <UncontrolledTooltip target="#instagram-tooltip">
                   Follow us on Instagram
+                </UncontrolledTooltip>
+              </NavItem> */}
+            </Nav>
+            <Nav navbar>
+              <NavItem>
+                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
+                  <i
+                    id="i_userInfo"
+                    className="now-ui-icons users_single-02"
+                    style={{ color: `${navFontColor}` }}
+                  ></i>
+                </NavLink>
+                <UncontrolledTooltip target="#i_userInfo">
+                  로그인
+                </UncontrolledTooltip>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
+                  <i
+                    id="i_userJoin"
+                    className="now-ui-icons users_single-02"
+                    style={{ color: `${navFontColor}` }}
+                  ></i>
+                </NavLink>
+                <UncontrolledTooltip target="#i_userJoin">
+                  회원가입
                 </UncontrolledTooltip>
               </NavItem>
             </Nav>
