@@ -245,16 +245,9 @@ function IndexNavbar() {
             </Nav>
             <Nav navbar>
               <NavItem>
-                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <i
-                    id="i_userInfo"
-                    className="now-ui-icons users_single-02"
-                    style={{ color: `${navFontColor}` }}
-                  ></i>
+                <NavLink href="/login">
+                <p style={{ color: `${navFontColor}` }}>로그인</p>
                 </NavLink>
-                <UncontrolledTooltip target="#i_userInfo">
-                  로그인
-                </UncontrolledTooltip>
               </NavItem>
               <NavItem>
                 <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>

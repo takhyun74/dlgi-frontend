@@ -18,6 +18,9 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
+
+import { refresh } from "utils/Token.js"
+
 function LandingPage() {
   const [firstFocus, setFirstFocus] = React.useState(false);
   const [lastFocus, setLastFocus] = React.useState(false);
@@ -54,18 +57,8 @@ function LandingPage() {
                   className="btn-round font-weight-bold"
                   color="info"
                   onClick={() =>{ 
-                    axios.get('/refresh')
-                    .then(res => {
-                      console.log(res);
-                      
-                      //if(res.data.ok) {
-                      //  console.lo
-                      //}
-                    })
-                    .catch(err => {
-                      alert(err.response.data.message);
-                          console.log(err.response)
-                      //this.$eventHub.$emit('showError', err)
+                    refresh(axios.defaults.headers.common['Authorization'], axios.defaults.headers.common['Refresh'], function(data){
+                      console.log("bbb");
                     });
                   }}
                   size="lg"

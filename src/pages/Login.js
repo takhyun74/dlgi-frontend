@@ -121,13 +121,12 @@ function LoginPage({ history }) {
                             const { accessToken, refreshToken } = res.data;
                             axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
                             axios.defaults.headers.common['Refresh'] = refreshToken;
-                            history.push("/");
+                            history.push("langding");
                           }
                         })
                         .catch(err => {
                           alert(err.response.data.message);
                           console.log(err.response)
-                          //this.$eventHub.$emit('showError', err)
                         });
                       }}
                       size="lg"
