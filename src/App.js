@@ -1,7 +1,7 @@
 // @ts-nocheck
 
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
 // styles for this kit
 import "assets/css/bootstrap.min.css";
@@ -12,22 +12,24 @@ import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 // styles for Customize Main page
 import "assets/css/dlgi_main.css";
 
-import LoginPage from 'pages/Login';
-import ProfilePage from 'pages/Profile';
-import LandingPage from 'pages/Landing';
-import MainPage from 'pages/Main';
+import LoginPage from "pages/Login";
+import ProfilePage from "pages/Profile";
+import LandingPage from "pages/Landing";
+import MainPage from "pages/Main";
+import IntroduceDlgi from "pages/IntroduceDlgi.js";
 
 const tokenState = {
   authenticated: false,
   accessToken: null,
-  refreshToken: null
-} // 토큰 관리 ==> useReducer 사용 예정 
+  refreshToken: null,
+}; // 토큰 관리 ==> useReducer 사용 예정
 
 const App = () => {
   return (
     <>
       <Switch>
-        <Route path="/" exact={true} component={MainPage} />
+        <Route path="/index" exact={true} component={MainPage} />
+        <Route path="/dlgicrew" component={IntroduceDlgi} />
         <Route path="/login" component={LoginPage} />
         <Route path="/profile" component={ProfilePage} />
         <Route path="/langding" component={LandingPage} />
@@ -37,4 +39,3 @@ const App = () => {
 };
 
 export default App;
-
