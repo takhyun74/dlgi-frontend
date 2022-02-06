@@ -5,8 +5,6 @@ import React from "react";
 import { Button, Container, NavLink } from "reactstrap";
 // core components
 
-const strMainTitle = "마지막 한 걸음까지 멋지게 완주\nwearedalligetit";
-
 function IndexHeader() {
   let pageHeader = React.createRef();
   const [arrowDisplayYn, setArrowDisplayYn] = React.useState("");
@@ -44,7 +42,7 @@ function IndexHeader() {
         filter-color="blue"
         style={{
           backgroundImage:
-            "linear-gradient( rgba(256, 255, 255, 0.45), rgba(256, 256, 256, 0) ),url(" +
+            "linear-gradient( rgba(256, 255, 255, 0.65), rgba(256, 256, 256, 0) ),url(" +
             require("../../assets/img/dlgi-header.jpg").default +
             ")",
           backgroundSize: "120% 105%",

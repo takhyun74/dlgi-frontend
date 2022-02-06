@@ -106,8 +106,8 @@ const CrewSection02 = () => {
               <div>
                 <span className="square-box-title">Crew Philosophy</span>
                 <span className="square-box-contents">
-                  달리기릿은 단순히 달리는 것이 러닝의 전부가 아니라고
-                  생각합니다.
+                  달리기릿은 단순히 달리는 것이<br></br>
+                  러닝의 전부가 아니라고 생각합니다.
                   <br></br>
                   달리기릿은 러닝 또는 러닝 문화가 가진 멋을 이해하며 러닝에
                   대한 철학, 느낌을 다른 예술 행위와 혼합하여 표현하는 크루

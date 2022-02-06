@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 // styles for this kit
 import "assets/css/bootstrap.min.css";
@@ -28,11 +28,13 @@ const App = () => {
   return (
     <>
       <Switch>
-        <Route path="/index" exact={true} component={MainPage} />
+        <Route path="/home" exact={true} component={MainPage} />
         <Route path="/dlgicrew" component={IntroduceDlgi} />
         <Route path="/login" component={LoginPage} />
         <Route path="/profile" component={ProfilePage} />
         <Route path="/langding" component={LandingPage} />
+        <Redirect to="/home" />
+        <Redirect from="/" to="/home" />
       </Switch>
     </>
   );

@@ -59,7 +59,7 @@ function IndexNavbar() {
       <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
         <Container>
           <div className="navbar-translate">
-            <NavbarBrand href="/index" target="_blank" id="navbar-brand">
+            <NavbarBrand href="/home" target="_blank" id="navbar-brand">
               <img
                 alt="..."
                 className="dlgi-logo"
@@ -246,7 +246,7 @@ function IndexNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink href="/login">
-                <p style={{ color: `${navFontColor}` }}>로그인</p>
+                  <p style={{ color: `${navFontColor}` }}>로그인</p>
                 </NavLink>
               </NavItem>
               <NavItem>

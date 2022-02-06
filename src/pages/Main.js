@@ -51,7 +51,7 @@ function Main() {
           <Section01 />
           <Section02 />
           <Section03 />
-          <BasicElements />
+          {/* <BasicElements />
           <Navbars />
           <Tabs />
           <Pagination />
@@ -63,9 +63,10 @@ function Main() {
           <CompleteExamples />
           <SignUp />
           <Examples />
-          <Download />
+          <Download /> */}
         </div>
-        {/* <DarkFooter /> */}
+        <DarkFooter />
+        {/* <TransparentFooter /> */}
       </div>
     </>
   );

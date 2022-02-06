@@ -111,7 +111,7 @@
   font-size: 28px;
   font-weight: 700;
   line-height: 1.3;
-  color: #3182f6;
+  color: #003efd;
   margin-bottom: 30px;
 }
 
@@ -263,7 +263,7 @@
       rgba(256, 255, 255, 0),
       rgba(256, 256, 256, 0)
     ),
-    url("../img/sec02-02.jpg");
+    url("../img/crew-sec02.jpg");
   background-size: 100% 100%;
 }
 
