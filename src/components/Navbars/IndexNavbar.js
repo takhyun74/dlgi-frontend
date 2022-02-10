@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -15,13 +15,26 @@ import {
   Nav,
   Container,
   UncontrolledTooltip,
+  // @ts-ignore
 } from "reactstrap";
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "DOWN":
+      return "#ffffff";
+    case "UP":
+      return "#003efd";
+    default:
+      return state;
+  }
+}
 
 function IndexNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [MainLogoColor, setMainLogoColor] = React.useState("blue");
   const [navFontColor, setNavFontColor] = React.useState("#000000");
+  const [ToggleBtnColor, dispatch] = useReducer(reducer, "#003efd");
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -31,6 +44,8 @@ function IndexNavbar() {
         setNavbarColor("");
         setMainLogoColor("white");
         setNavFontColor("#ffffff");
+        // @ts-ignore
+        dispatch({ type: "DOWN" });
       } else if (
         document.documentElement.scrollTop < 400 ||
         document.body.scrollTop < 400
@@ -38,6 +53,8 @@ function IndexNavbar() {
         setNavbarColor("navbar-transparent");
         setMainLogoColor("blue");
         setNavFontColor("#000000");
+        // @ts-ignore
+        dispatch({ type: "UP" });
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -81,9 +98,18 @@ function IndexNavbar() {
               aria-expanded={collapseOpen}
               type="button"
             >
-              <span className="navbar-toggler-bar top-bar"></span>
-              <span className="navbar-toggler-bar middle-bar"></span>
-              <span className="navbar-toggler-bar bottom-bar"></span>
+              <span
+                className="navbar-toggler-bar top-bar"
+                style={{ background: `${ToggleBtnColor}` }}
+              ></span>
+              <span
+                className="navbar-toggler-bar middle-bar"
+                style={{ background: `${ToggleBtnColor}` }}
+              ></span>
+              <span
+                className="navbar-toggler-bar bottom-bar"
+                style={{ background: `${ToggleBtnColor}` }}
+              ></span>
             </button>
           </div>
           <Collapse

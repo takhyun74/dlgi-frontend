@@ -12,12 +12,47 @@ import {
   Container,
   Row,
   Col,
+  // @ts-ignore
 } from "reactstrap";
 
 const Section03 = () => {
-  React.useEffect(() => {
-    //Nothing to do.
-  });
+  const ElContents = [
+    {
+      idx: 1,
+      elType: "div",
+      className: "section-title",
+      string: "달리기릿의 표현방식",
+      loc: "header",
+    },
+    {
+      idx: 2,
+      elType: "p",
+      className: "sec03-sub-title",
+      string: "러닝의 본질적인 가치와 멋을",
+      loc: "right",
+    },
+    {
+      idx: 3,
+      elType: "p",
+      className: "sec03-sub-title",
+      string: "달리기릿만의 표현방식으로 재해석 합니다.",
+      loc: "right",
+    },
+    {
+      idx: 4,
+      elType: "p",
+      className: "sec03-sub-title",
+      string: "우리는 러닝과 새로운 예술 행위를 혼합하며",
+      loc: "left",
+    },
+    {
+      idx: 5,
+      elType: "p",
+      className: "sec03-sub-title",
+      string: "우리만의 새로운 형태의 러닝문화를 만들어 가길 원합니다.",
+      loc: "left",
+    },
+  ];
   return (
     <>
       <div
@@ -31,7 +66,12 @@ const Section03 = () => {
           <div className="height-100">
             <div className="sec02-contents-area">
               <div className="section-title-area">
-                <div className="section-title">달리기릿의 표현방식</div>
+                {ElContents.filter((obj) => obj.elType === "div").map((obj) => (
+                  <div className={obj.className} key={obj.idx}>
+                    {obj.string}
+                  </div>
+                ))}
+                {/* <div className="section-title">달리기릿의 표현방식</div> */}
                 {/* <div className="section-sub-title">'달리기' 그리고</div>
                 <div className="section-sub-title">'LET'S GET IT'</div> */}
               </div>
@@ -41,10 +81,17 @@ const Section03 = () => {
                 }}
               >
                 <div className="section-right-img-area">
-                  <p className="sec03-sub-title">러닝의 본질적인 가치와 멋을</p>
+                  {ElContents.filter(
+                    (obj) => obj.elType === "p" && obj.loc === "right"
+                  ).map((obj) => (
+                    <p className={obj.className} key={obj.idx}>
+                      {obj.string}
+                    </p>
+                  ))}
+                  {/* <p className="sec03-sub-title">러닝의 본질적인 가치와 멋을</p>
                   <p className="sec03-sub-title">
                     달리기릿만의 표현방식으로 재해석 합니다.
-                  </p>
+                  </p> */}
                   <img
                     className="sec02-img"
                     // style={{ height: "70%" }}
@@ -59,17 +106,30 @@ const Section03 = () => {
                     alt="..."
                     src={require("../../assets/img/sec03-01.jpg").default}
                   ></img>
-                  <p
+                  {ElContents.filter(
+                    (obj) => obj.elType === "p" && obj.loc === "left"
+                  ).map((obj) => (
+                    <p
+                      className={obj.className}
+                      key={obj.idx}
+                      style={
+                        obj.idx === 4 ? { padding: "50px 0px 0px 0px" } : {}
+                      }
+                    >
+                      {obj.string}
+                    </p>
+                  ))}
+                  {/* <p
                     className="sec03-sub-title"
+                    padding: "50px 0px 0px 0px",
                     style={{
-                      padding: "50px 0px 0px 0px",
                     }}
                   >
                     우리는 러닝과 새로운 예술 행위를 혼합하며
                   </p>
                   <p className="sec03-sub-title">
                     우리만의 새로운 형태의 러닝문화를 만들어 가길 원합니다.
-                  </p>
+                  </p> */}
                 </div>
               </div>
               {/* <p className="section-desc">

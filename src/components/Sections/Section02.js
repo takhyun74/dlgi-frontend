@@ -12,12 +12,36 @@ import {
   Container,
   Row,
   Col,
+  // @ts-ignore
 } from "reactstrap";
 
 const Section02 = () => {
-  React.useEffect(() => {
-    //Nothing to do.
-  });
+  const ElContents = [
+    {
+      idx: 1,
+      elType: "div",
+      className: "section-title",
+      string: "달리기릿의 달리기",
+    },
+    {
+      idx: 2,
+      elType: "div",
+      className: "section-sub-title",
+      string: "'달리기' 그리고",
+    },
+    {
+      idx: 3,
+      elType: "div",
+      className: "section-sub-title",
+      string: "'LET'S GET IT'",
+    },
+    {
+      idx: 4,
+      elType: "p",
+      className: "section-desc",
+      string: "우리가 함께할 달리기릿은 그렇게 탄생했습니다.",
+    },
+  ];
   return (
     <>
       <div
@@ -31,9 +55,23 @@ const Section02 = () => {
           <div className="height-100">
             <div className="sec02-contents-area">
               <div className="section-title-area">
-                <div className="section-title">달리기릿의 달리기</div>
+                {ElContents.filter(
+                  (obj) => obj.className === "section-title"
+                ).map((obj) => (
+                  <div className={obj.className} key={obj.idx}>
+                    {obj.string}
+                  </div>
+                ))}
+                {ElContents.filter(
+                  (obj) => obj.className === "section-sub-title"
+                ).map((obj) => (
+                  <div className={obj.className} key={obj.idx}>
+                    {obj.string}
+                  </div>
+                ))}
+                {/* <div className="section-title">달리기릿의 달리기</div>
                 <div className="section-sub-title">'달리기' 그리고</div>
-                <div className="section-sub-title">'LET'S GET IT'</div>
+                <div className="section-sub-title">'LET'S GET IT'</div> */}
               </div>
               <div>
                 <div className="section-right-img-area">
@@ -51,9 +89,14 @@ const Section02 = () => {
                   ></img>
                 </div>
               </div>
-              <p className="section-desc">
+              {ElContents.filter((obj) => obj.elType === "p").map((obj) => (
+                <div className={obj.className} key={obj.idx}>
+                  {obj.string}
+                </div>
+              ))}
+              {/* <p className="section-desc">
                 우리가 함께할 달리기릿은 그렇게 탄생했습니다.
-              </p>
+              </p> */}
             </div>
           </div>
         </Container>

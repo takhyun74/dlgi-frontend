@@ -12,6 +12,7 @@ import {
   Container,
   Row,
   Col,
+  // @ts-ignore
 } from "reactstrap";
 
 const CrewSection01 = () => {
