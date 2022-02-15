@@ -53,7 +53,7 @@ const Section02 = () => {
       >
         <Container>
           <div className="height-100">
-            <div className="sec02-contents-area">
+            <div className="section-contents-area">
               <div className="section-title-area">
                 {ElContents.filter(
                   (obj) => obj.className === "section-title"

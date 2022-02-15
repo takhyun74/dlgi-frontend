@@ -53,7 +53,7 @@ function IndexHeader() {
 
         <Container>
           <div className="index-header-main-area">
-            <div className="index-header-flex-sub-01">
+            <div className="mt-15per">
               <h1 className="font-size-5em color-black">마지막 한 걸음 까지</h1>
               <h1 className="font-size-5em color-black">멋지게 완주</h1>
               <Button
@@ -70,7 +70,7 @@ function IndexHeader() {
             </div>
 
             <img
-              className="index-header-arrow"
+              className="header-arrow"
               style={{ display: `${arrowDisplayYn}` }}
               src={require("../../assets/img/arrow.gif").default}
               onClick={(e) => {

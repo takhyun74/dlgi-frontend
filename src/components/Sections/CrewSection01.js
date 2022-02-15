@@ -30,7 +30,7 @@ const CrewSection01 = () => {
       >
         <Container>
           <div className="height-100">
-            <div className="sec02-contents-area">
+            <div className="section-contents-area">
               <div className="section-title-area">
                 <div className="crew-section-sub-title">
                   달리기릿은 기존 문화 속에 안주하지 않고,
