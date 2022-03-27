@@ -30,7 +30,7 @@ function ProfilePageHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/dlgi_newLogo.jpg").default + ")",
+            backgroundImage: "url(" + require("assets/img/dlgi-application-header.jpg").default + ")",
             
           }}
           ref={pageHeader}

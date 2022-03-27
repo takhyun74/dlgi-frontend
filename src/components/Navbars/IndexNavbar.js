@@ -39,6 +39,7 @@ function IndexNavbar(props) {
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [MainLogoColor, setMainLogoColor] = React.useState("blue");
   const [navFontColor, setNavFontColor] = React.useState(defaultFontColor);
+  const [ToggleBtnColor, dispatch] = useReducer(reducer, "#003efd");
 
   const [modalLive, setModalLive] = React.useState(false);
   const [modal, setModal] = React.useState({
@@ -71,6 +72,7 @@ function IndexNavbar(props) {
         setNavbarColor("navbar-transparent");
         setMainLogoColor("blue");
         setNavFontColor(defaultFontColor);
+        // @ts-ignore
         dispatch({ type: "UP" });
       }
     };
@@ -302,9 +304,7 @@ function IndexNavbar(props) {
             <Nav navbar>
               <NavItem>
                 <NavLink href="/profile">
-                <p style={{ color: `${navFontColor}` }}>프로필</p>
-                <NavLink href="/login">
-                  <p style={{ color: `${navFontColor}` }}>로그인</p>
+                  <p style={{ color: `${navFontColor}` }}>프로필</p>
                 </NavLink>
               </NavItem>
               <NavItem>
