@@ -13,15 +13,10 @@ import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 import "assets/css/dlgi_main.css";
 
 import LoginPage from 'pages/Login';
-import ProfilePage from 'pages/Profile';
+import ProfilePage from 'pages/Application';
 import LandingPage from 'pages/Landing';
 import MainPage from 'pages/Main';
-
-const tokenState = {
-  authenticated: false,
-  accessToken: null,
-  refreshToken: null
-} // 토큰 관리 ==> useReducer 사용 예정 
+import ApplicationPage from 'pages/Application';
 
 const App = () => {
   return (
@@ -31,6 +26,7 @@ const App = () => {
         <Route path="/login" component={LoginPage} />
         <Route path="/profile" component={ProfilePage} />
         <Route path="/langding" component={LandingPage} />
+        <Route path="/application" component={ApplicationPage} />
       </Switch>
     </>
   );

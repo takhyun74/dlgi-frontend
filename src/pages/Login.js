@@ -21,6 +21,7 @@ import {
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import { convertToObject } from "../../node_modules/typescript/lib/typescript";
 
 function LoginPage({ history }) {
   const [idFocus, setIdFocus] = useState(false);
@@ -46,7 +47,7 @@ function LoginPage({ history }) {
   
   return (
     <>
-      <ExamplesNavbar />
+      {/* <ExamplesNavbar /> */}
       <div className="page-header clear-filter" filter-color="blue">
         <div
           className="page-header-image"
@@ -61,7 +62,7 @@ function LoginPage({ history }) {
               <Card className="card-login card-plain">
                 <Form action="" className="form" method="">
                   <CardHeader className="text-center">
-                    <div className="logo-container">
+                    <div className="logo-container" style={{visibility:'hidden'}}>
                       <img
                         alt="..."
                         src={require("assets/img/now-logo.png").default}
@@ -119,9 +120,13 @@ function LoginPage({ history }) {
                         .then(res => {
                           if(res.data.ok) {
                             const { accessToken, refreshToken } = res.data;
-                            axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
-                            axios.defaults.headers.common['Refresh'] = refreshToken;
-                            history.push("langding");
+                            
+                            var auth = {'login_user': data.user_id, 'accessToken': accessToken, 'refreshToken': refreshToken};
+                            localStorage.setItem('token', JSON.stringify(auth));
+
+                            //axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+                            //axios.defaults.headers.common['Refresh'] = refreshToken;
+                            history.push("/");
                           }
                         })
                         .catch(err => {

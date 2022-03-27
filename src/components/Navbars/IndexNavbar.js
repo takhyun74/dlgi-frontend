@@ -17,11 +17,30 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
-function IndexNavbar() {
+import CModal from "components/Modal/Modal";
+
+function IndexNavbar(props) {
+  var defaultFontColor = "#000000";
+  if(props.fontColor !== "" && props.fontColor !== undefined && props.fontColor !== null) { defaultFontColor = props.fontColor }
+
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   const [MainLogoColor, setMainLogoColor] = React.useState("blue");
-  const [navFontColor, setNavFontColor] = React.useState("#000000");
+  const [navFontColor, setNavFontColor] = React.useState(defaultFontColor);
+
+  const [modalLive, setModalLive] = React.useState(false);
+  const [modal, setModal] = React.useState({
+    'id':'',
+    'header': '',
+    'message': '',
+    'close': '',
+    'ok': '',
+    'className': "modal-md",
+    'modalClassName': "bd-example-modal-md"
+  });
+
+  const token = JSON.parse(localStorage.getItem('token'));
+
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -37,7 +56,7 @@ function IndexNavbar() {
       ) {
         setNavbarColor("navbar-transparent");
         setMainLogoColor("blue");
-        setNavFontColor("#000000");
+        setNavFontColor(defaultFontColor);
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -59,7 +78,7 @@ function IndexNavbar() {
       <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
         <Container>
           <div className="navbar-translate">
-            <NavbarBrand href="/index" target="_blank" id="navbar-brand">
+            <NavbarBrand href="/" id="navbar-brand">
               <img
                 alt="..."
                 className="dlgi-logo"
@@ -69,9 +88,6 @@ function IndexNavbar() {
                 }
               ></img>
             </NavbarBrand>
-            <UncontrolledTooltip target="#navbar-brand">
-              Home
-            </UncontrolledTooltip>
             <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
@@ -107,7 +123,7 @@ function IndexNavbar() {
                   <p style={{ color: `${navFontColor}` }}>크루소개</p>
                 </NavLink>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink
                   href="#pablo"
                   onClick={(e) => {
@@ -117,7 +133,20 @@ function IndexNavbar() {
                       .scrollIntoView();
                   }}
                 >
-                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i> */}
+                  <i className="now-ui-icons arrows-1_cloud-download-93"></i>
+                  <p style={{ color: `${navFontColor}` }}>신청서</p>
+                </NavLink>
+              </NavItem> */}
+              <NavItem>
+                <NavLink 
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+
+                    setModal({...modal, id:'application', header: '정기런 신청', message:'안녕하세요.달리기릿입니다! \n 당신은 회원이신가요?', close:'비회원', ok:'회원'});
+                    setModalLive(true);
+                  }}
+                >
                   <p style={{ color: `${navFontColor}` }}>신청서</p>
                 </NavLink>
               </NavItem>
@@ -243,28 +272,42 @@ function IndexNavbar() {
                 </UncontrolledTooltip>
               </NavItem> */}
             </Nav>
+
+            {token !== null
+            ?
+            <Nav navbar>
+              <NavItem>
+                <NavLink href="/profile">
+                <p style={{ color: `${navFontColor}` }}>프로필</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="/"
+                  onClick={(e) => {
+                    localStorage.removeItem('token');
+                  }}
+                >
+                  <p style={{ color: `${navFontColor}` }}>로그아웃</p>
+                </NavLink>
+              </NavItem>
+            </Nav>
+
+            :
+            
             <Nav navbar>
               <NavItem>
                 <NavLink href="/login">
                 <p style={{ color: `${navFontColor}` }}>로그인</p>
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <i
-                    id="i_userJoin"
-                    className="now-ui-icons users_single-02"
-                    style={{ color: `${navFontColor}` }}
-                  ></i>
-                </NavLink>
-                <UncontrolledTooltip target="#i_userJoin">
-                  회원가입
-                </UncontrolledTooltip>
-              </NavItem>
             </Nav>
+            }
+
           </Collapse>
         </Container>
       </Navbar>
+      <CModal data={modal} modalLive={ modalLive } setModalLive={ setModalLive } />
     </>
   );
 }
