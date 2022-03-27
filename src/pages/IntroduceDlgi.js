@@ -5,13 +5,12 @@ import React from "react";
 // } from "reactstrap";
 
 // core components
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
-import Section01 from "components/Sections/Section01.js";
-import Section02 from "components/Sections/Section02.js";
+import CrewNavbar from "components/Navbars/CrewNavbar.js";
+import CrewHeader from "components/Headers/CrewHeader.js";
+import CrewSection01 from "components/Sections/CrewSection01.js";
+import CrewSection02 from "components/Sections/CrewSection02.js";
 import Section03 from "components/Sections/Section03.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
-import TransparentFooter from "components/Footers/TransparentFooter.js";
 
 // sections for this page
 import Images from "views/index-sections/Images.js";
@@ -29,7 +28,7 @@ import SignUp from "views/index-sections/SignUp.js";
 import Examples from "views/index-sections/Examples.js";
 import Download from "views/index-sections/Download.js";
 
-function Main() {
+function IntroduceDlgi() {
   React.useEffect(() => {
     document.body.classList.add("index-page");
     document.body.classList.add("sidebar-collapse");
@@ -43,33 +42,19 @@ function Main() {
   });
   return (
     <>
-      <IndexNavbar />
+      <CrewNavbar />
       <div className="wrapper">
-        <IndexHeader />
+        <CrewHeader />
         <div className="main">
           {/* <Images /> */}
-          <Section01 />
-          <Section02 />
+          <CrewSection01 />
+          <CrewSection02 />
           <Section03 />
-          {/* <BasicElements />
-          <Navbars />
-          <Tabs />
-          <Pagination />
-          <Notifications />
-          <Typography />
-          <Javascript />
-          <Carousel />
-          <NucleoIcons />
-          <CompleteExamples />
-          <SignUp />
-          <Examples />
-          <Download /> */}
         </div>
-        <DarkFooter />
-        {/* <TransparentFooter /> */}
+        {/* <DarkFooter /> */}
       </div>
     </>
   );
 }
 
-export default Main;
+export default IntroduceDlgi;

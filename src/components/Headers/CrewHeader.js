@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*eslint-disable*/
 import React from "react";
 
@@ -55,7 +56,7 @@ function CrewHeader() {
             </div>
 
             <img
-              className="crew-header-arrow"
+              className="header-arrow"
               style={{ display: `${arrowDisplayYn}` }}
               src={require("../../assets/img/arrow.gif").default}
               onClick={(e) => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
@@ -15,9 +15,21 @@ import {
   Nav,
   Container,
   UncontrolledTooltip,
+  // @ts-ignore
 } from "reactstrap";
 
 import CModal from "components/Modal/Modal";
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "DOWN":
+      return "#ffffff";
+    case "UP":
+      return "#003efd";
+    default:
+      return state;
+  }
+}
 
 function IndexNavbar(props) {
   var defaultFontColor = "#000000";
@@ -50,6 +62,8 @@ function IndexNavbar(props) {
         setNavbarColor("");
         setMainLogoColor("white");
         setNavFontColor("#ffffff");
+        // @ts-ignore
+        dispatch({ type: "DOWN" });
       } else if (
         document.documentElement.scrollTop < 400 ||
         document.body.scrollTop < 400
@@ -57,6 +71,7 @@ function IndexNavbar(props) {
         setNavbarColor("navbar-transparent");
         setMainLogoColor("blue");
         setNavFontColor(defaultFontColor);
+        dispatch({ type: "UP" });
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -78,7 +93,7 @@ function IndexNavbar(props) {
       <Navbar className={"fixed-top " + navbarColor} expand="lg" color="info">
         <Container>
           <div className="navbar-translate">
-            <NavbarBrand href="/" id="navbar-brand">
+            <NavbarBrand href="/home" target="_blank" id="navbar-brand">
               <img
                 alt="..."
                 className="dlgi-logo"
@@ -97,9 +112,18 @@ function IndexNavbar(props) {
               aria-expanded={collapseOpen}
               type="button"
             >
-              <span className="navbar-toggler-bar top-bar"></span>
-              <span className="navbar-toggler-bar middle-bar"></span>
-              <span className="navbar-toggler-bar bottom-bar"></span>
+              <span
+                className="navbar-toggler-bar top-bar"
+                style={{ background: `${ToggleBtnColor}` }}
+              ></span>
+              <span
+                className="navbar-toggler-bar middle-bar"
+                style={{ background: `${ToggleBtnColor}` }}
+              ></span>
+              <span
+                className="navbar-toggler-bar bottom-bar"
+                style={{ background: `${ToggleBtnColor}` }}
+              ></span>
             </button>
           </div>
           <Collapse
@@ -279,6 +303,8 @@ function IndexNavbar(props) {
               <NavItem>
                 <NavLink href="/profile">
                 <p style={{ color: `${navFontColor}` }}>프로필</p>
+                <NavLink href="/login">
+                  <p style={{ color: `${navFontColor}` }}>로그인</p>
                 </NavLink>
               </NavItem>
               <NavItem>
